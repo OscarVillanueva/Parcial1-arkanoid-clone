@@ -3,7 +3,7 @@ using System;
 
 public class SoftBlock : Block
 {
-    public SoftBlock(): base(Guid.NewGuid().ToString(), 1, false, 2,Color.blue) { 
+    public SoftBlock(): base(Guid.NewGuid().ToString(), 1, false, 2, Color.gray) { 
     }
 
     public override void HandleDestroy()
