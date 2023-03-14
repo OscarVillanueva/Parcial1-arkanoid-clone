@@ -25,7 +25,6 @@ public class Block
     }
 
     public virtual void HandleDestroy() {
-        // TODO: Indicar al game manager que se rompio un bloque para agregar puntaje
-        // TODO: Indicar al UIManager actualizar el score en pantalla
+        // TODO: Solo avisar al manager cuantos puntos se le va a agregar
     }
 }

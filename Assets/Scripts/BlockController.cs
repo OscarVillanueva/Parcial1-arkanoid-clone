@@ -29,6 +29,10 @@ public class BlockController : MonoBehaviour
             case BlockTypes.POWERUP:
                 block = new PowerBlock();
                 break;
+
+            case BlockTypes.HIDE:
+                block = new PowerBlock();
+                break;
         }
     }
 

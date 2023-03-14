@@ -9,6 +9,6 @@ public class SoftBlock : Block
     public override void HandleDestroy()
     {
         Debug.Log("Bloque suave destruido");
-        // TODO: cuando un bloque suave la bola aumenta de velocidad en 0.1%
+        // TODO: Al acumular cierta cantidad de bloques activar que ciertos bloques desaparezcan o se muevan
     }
 }
