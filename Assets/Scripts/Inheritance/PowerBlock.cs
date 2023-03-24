@@ -12,6 +12,8 @@ public class PowerBlock : Block
 
     public override void HandleDestroy()
     {
+        base.HandleDestroy();
         Debug.Log("Bloque power destruido");
+        // TODO: decirle al manejador de power ups que debe instanciar un power up
     }
 }

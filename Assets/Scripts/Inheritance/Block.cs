@@ -25,6 +25,6 @@ public class Block
     }
 
     public virtual void HandleDestroy() {
-        // TODO: Solo avisar al manager cuantos puntos se le va a agregar
+        GameManager.sharedInstance.AddPoints(Points);
     }
 }

@@ -16,24 +16,14 @@ public class BlockController : MonoBehaviour
 
     private void DefineBlock()
     {
-        switch(type)
+        block = type switch
         {
-            case BlockTypes.SOFT:
-                block = new SoftBlock();
-                break;
-
-            case BlockTypes.HARD:
-                block = new HardBlock();
-                break;
-
-            case BlockTypes.POWERUP:
-                block = new PowerBlock();
-                break;
-
-            case BlockTypes.HIDE:
-                block = new PowerBlock();
-                break;
-        }
+            BlockTypes.SOFT => new SoftBlock(),
+            BlockTypes.HARD => new HardBlock(),
+            BlockTypes.POWERUP => new PowerBlock(),
+            BlockTypes.HIDE => new PowerBlock(),
+            _ => block
+        };
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -42,7 +32,11 @@ public class BlockController : MonoBehaviour
 
             hits = hits + 1;
 
-            if (hits >= block.Hardness) Destroy(gameObject);
+            if (hits >= block.Hardness)
+            {
+                block.HandleDestroy();
+                Destroy(gameObject);
+            }
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,11 @@ public class BallController : MonoBehaviour
     private void Awake()
     {
         rigidBody = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start()
+    {
+        GameManager.sharedInstance.StartLevel(4, "Level1");
     }
 
     // Update is called once per frame

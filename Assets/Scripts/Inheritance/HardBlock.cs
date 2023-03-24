@@ -9,8 +9,8 @@ public class HardBlock : Block
 
     public override void HandleDestroy()
     {
-        Debug.Log("Bloque duro destruido");
-        // TODO: Avisar la manager que un bloque se rompio y avisar el cuantos puntos da
+        base.HandleDestroy();
         // TODO: cuando un bloque duro la bola aumenta de velocidad en 1%
+        Debug.Log("Se destruyo un bloque duro");
     }
 }
