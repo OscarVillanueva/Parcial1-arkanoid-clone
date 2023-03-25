@@ -12,4 +12,7 @@ public class SoftBlock : Block
         Debug.Log("Bloque suave destruido");
         // TODO: Al acumular cierta cantidad de bloques activar que ciertos bloques desaparezcan o se muevan
     }
+    
+    // Quitar el handleDestroy y que sea fijo
+    // Hacer un metodo virtual para que de acuerdo al short ver si ya se peude romper o no
 }

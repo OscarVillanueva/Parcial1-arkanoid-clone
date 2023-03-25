@@ -4,6 +4,8 @@ using UnityEngine;
 public class BlockController : MonoBehaviour
 {
     [SerializeField] private BlockTypes type;
+    [SerializeField] private int baseMultiplayer = 1;
+    
     private Block block;
     private int hits;
 
@@ -30,7 +32,7 @@ public class BlockController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball")) {
 
-            hits = hits + 1;
+            hits += (baseMultiplayer * GameManager.sharedInstance.PowerMultiplayer);
 
             if (hits >= block.Hardness)
             {

@@ -33,4 +33,17 @@ public class BallController : MonoBehaviour
         Vector2 currentMovement = new(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         rigidBody.velocity = currentMovement.normalized * 10;
     }
+
+    [ContextMenu("Init file")]
+    public void InitSaveFile()
+    {
+        // 0 Amarillo, 1 Rojo, 2 Azul, 3 Verde
+        new FileReaderManager().WriteIntoFile(1,0,1);
+    }
+    
+    [ContextMenu("Read file")]
+    public void ReadFile()
+    {
+        new FileReaderManager().ReadFile();
+    }
 }

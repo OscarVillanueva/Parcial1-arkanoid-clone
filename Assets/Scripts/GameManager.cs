@@ -9,9 +9,12 @@ public class GameManager : MonoBehaviour
     public static GameManager sharedInstance;
 
     [SerializeField] private int numberOfLevels = 5;
-
+    private int currentLevel = 1;
+    
     private int leftBlocks;
     private string nextLevelName;
+
+    public int PowerMultiplayer { set; get; }
 
     public int Points { set; get; }
 
@@ -20,6 +23,7 @@ public class GameManager : MonoBehaviour
         if (!sharedInstance)
         {
             sharedInstance = this;
+            PowerMultiplayer = 1;
             DontDestroyOnLoad(gameObject);
         }
         else Destroy(gameObject);
@@ -34,6 +38,7 @@ public class GameManager : MonoBehaviour
     private void GoToNextLevel()
     {
         SceneManager.LoadScene(nextLevelName);
+        currentLevel += 1;
     }
 
     public void AddPoints(int points)
@@ -41,7 +46,7 @@ public class GameManager : MonoBehaviour
         Points += points;
         leftBlocks -= 1;
 
-        if (leftBlocks <= 0)
+        if (leftBlocks <= 0 && currentLevel <= numberOfLevels)
         {
             GoToNextLevel();
         }
